@@ -19,9 +19,7 @@ const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   tsConfigPath,
-  [
-    '@ng-mfe2/shared/data-access-user',
-  ],
+  ['@ng-mfe2/shared/data-access-user'],
   workspaceRootPath
 );
 
@@ -29,6 +27,7 @@ module.exports = {
   output: {
     uniqueName: 'login',
     publicPath: 'auto',
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false,
@@ -55,7 +54,7 @@ module.exports = {
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),
-      }
+      },
     }),
     sharedMappings.getPlugin(),
   ],
