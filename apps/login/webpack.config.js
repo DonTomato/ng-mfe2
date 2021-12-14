@@ -29,7 +29,6 @@ module.exports = {
   output: {
     uniqueName: 'login',
     publicPath: 'auto',
-    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false,
@@ -56,10 +55,7 @@ module.exports = {
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),
-      },
-      library: {
-        type: 'module',
-      },
+      }
     }),
     sharedMappings.getPlugin(),
   ],
